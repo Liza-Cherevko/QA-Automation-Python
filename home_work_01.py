@@ -18,7 +18,7 @@ if True:
  apples = 2
  banana = None
 def banana_calc():
-  if apples == 2:
+  if apples:
          print(apples * 4)
   else:
          print(banana)
