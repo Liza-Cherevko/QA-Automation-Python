@@ -1,0 +1,5 @@
+print('home_work_02')
+print('home_work_02')
+print('home_work_02')
+print('home_work_02')
+print('home_work_02')
