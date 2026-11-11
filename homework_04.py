@@ -28,7 +28,6 @@ adwentures_of_tom_sawer =  adwentures_of_tom_sawer.replace("....", " ")
 #print(adwentures_of_tom_sawer)
 
 #3
-adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("  ", " ")
 adwentures_of_tom_sawer = " ".join(adwentures_of_tom_sawer.split())
 #print(adwentures_of_tom_sawer)
 
