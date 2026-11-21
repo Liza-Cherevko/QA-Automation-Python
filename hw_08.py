@@ -74,7 +74,7 @@ print(multiplication_table_01(3))
 
 #8 
 def sum_calculation(n1,n2):
-   #start calculation
+   #Calculates the sum of the input numbers.
    result = n1+n2
    return result
 print(sum_calculation(1,12))
@@ -93,7 +93,8 @@ print(longest_word_01(word_list))
 
 #10
 def num_list_calc_01(test_list):
-    #strart calculation
+    #Calculates the arithmetic mean of a list of numbers.
+
     result= sum(test_list)/len(test_list)
     return result
 print(num_list_calc_01(num_list))
