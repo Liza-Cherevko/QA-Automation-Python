@@ -1,166 +1,122 @@
-#Блок A. LIST — 4 задания
-#Задание 1. Создание и индексы
-fruits = ["apple", "banana", "orange", "kiwi", "mango"]
-print(fruits[0])
-print(fruits[-1])
-print(fruits[3])
-print(fruits[3:])
-fruits.reverse()
-print(fruits)
+#1
+def len_calculation():
+    test1=input()
+    if len(test1)>10:
+         return print(True)
+    else: print(False)
+#len_calculation()
 
-#Задание 2. Изменение списка
-numbers = [10, 20, 30, 40, 50]
-numbers.append(60)
-numbers.insert(1,15)
-numbers.pop(3)
-numbers[0]=100
-print(len(numbers))
+#2 Напишіть цикл, який буде вимагати від користувача ввести слово, в якому є літера "h" (враховуються як великі так і маленькі). Цикл не повинен завершитися, якщо користувач ввів слово без букви "h".
 
+def need_input_h():
+     test2 = input().lower()
+     while 'h' not in(test2.lower()): 
+         print('Please, put word with "h"')
+         test2=input().lower()
+     if 'h' in test2.lower(): print('Thank You!')
 
-#Задание 3. Работа с циклом и условиями
-numbers_list = [12, 5, 8, 21, 4, 17, 30, 9]
-even_numbers = []
-odd_numbers = []
+#need_input_h()
 
-for i in numbers_list:
-    if i %2 ==0:
-        even_numbers.append(i)
-    elif i %2 !=0 :
-        odd_numbers.append(i)
+#Є list з даними lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']. Напишіть код, який свормує новий list (наприклад lst2), який містить лише змінні типу стрінг, які присутні в lst1. Данні в лісті можуть бути будь якими
+lst2=[]
+lst3=[]
+lst1 = ['1', '2', 3, True, 'False', 5, '6', 7, 8, 'Python', 9, 0, 'Lorem Ipsum']
+def new_list_creation():
+     for i in lst1:
+      if isinstance(i,str): lst2.append(i)
+     print(lst2)
+#new_list_creation()
 
-print(even_numbers)
-print( odd_numbers)
+def str_calculation():
+    for i in lst1:
+        if isinstance(i,str) and i.isdigit() or isinstance(i,int) and not isinstance(i, bool):
+            lst3.append(int(i))
+    return sum(lst3)
 
-#Задание 4. Сортировка и срезы
-
-scores = [45, 90, 12, 78, 100, 56, 34, 88, 67, 91]
-scores.sort(reverse=True)
-
-print(scores)
-print(scores[:5])
-print(scores[-3])
-print(max(scores))
-print(min(scores))
-
-print(sum(scores)/len(scores))
+#print(str_calculation())
 
 
-#Блок B. TUPLE — 4 задания
-#Задание 5. Основы кортежа
-my_tuple = ("Python", "Java", "JavaScript", "C++", "C#")
-print(my_tuple[0])
-print(my_tuple[-1])
-print(my_tuple[:3])
-print(len(my_tuple))
-print("Python" in my_tuple )
-#Задание 6. Распаковка
-user = ("Liza", 25, "QA", "Ukraine")
-user1,user2, *other=user
-print(user1)
-print(user2)
-print(other)
+# Given list of tuples (name, surname, age, profession, City location)
+# 1 - Add your new record o the beginning of the given list
+# 2 - In modified list swap elements with indexes 1 and 5 (1<->5). Print result
+# 3 - check that all people in modified list with records indexes 6, 10, 13
+#   have age >=30. Print condition check result
 
-#Задание 7. Методы кортежа
-numbers_count = (1, 2, 3, 2, 5, 2, 7, 3, 9)
-print(numbers_count.count(2))
-print(numbers_count.index(7))
-print(numbers_count.index(3))
-print(len(numbers_count))
-
-#Задание 8. Работа с вложенными кортежами
-
-students = (
-    ("Liza", 90),
-    ("Masha", 75),
-    ("Dasha", 100),
-    ("Anna", 85)
-)
-
-for student in students:
-    if student[1]>80:
-     print( student[0], student[1])
-print(max(students, key=lambda student: student[1]))
+people_records = [
+  ('John', 'Doe', 28, 'Engineer', 'New York'),
+  ('Alice', 'Smith', 35, 'Teacher', 'Los Angeles'),
+  ('Bob', 'Johnson', 45, 'Doctor', 'Chicago'),
+  ('Emily', 'Williams', 30, 'Artist', 'San Francisco'),
+  ('Michael', 'Brown', 22, 'Student', 'Seattle'),
+  ('Sophia', 'Davis', 40, 'Lawyer', 'Boston'),
+  ('David', 'Miller', 33, 'Software Developer', 'Austin'),
+  ('Olivia', 'Wilson', 27, 'Marketing Specialist', 'Denver'),
+  ('Daniel', 'Taylor', 38, 'Architect', 'Portland'),
+  ('Grace', 'Moore', 25, 'Graphic Designer', 'Miami'),
+  ('Samuel', 'Jones', 50, 'Business Consultant', 'Atlanta'),
+  ('Emma', 'Hall', 31, 'Chef', 'Dallas'),
+  ('William', 'Clark', 29, 'Financial Analyst', 'Houston'),
+  ('Ava', 'White', 42, 'Journalist', 'San Diego'),
+  ('Ethan', 'Anderson', 36, 'Product Manager', 'Phoenix')
+]
 
 
-#Блок D. SET — 4 задания
-#Задание 13. Убираем дубликаты
-numberss = [1, 2, 2, 3, 4, 4, 5, 5, 5, 6]
-numberss = set(numberss)
-numberss.add(7)
-numberss.remove(3)
-print(numberss)
 
-#Задание 14. Методы Set
-languages = {"Python", "Java", "JavaScript"}
-
-languages.add('C++')
-languages.update('C#')
-print("Python" in languages)
-languages.discard('Java')
-print(len(languages))
-#Задание 15. Операции с множествами
-students_python = {"Liza", "Masha", "Dasha", "Anna"}
-students_java = {"Masha", "Anna", "Kate", "Sasha"}
-
-cupple= students_python | students_java
-rusult = students_python & students_java
-print(cupple)
-print(rusult)
-
-
-#Блок C. DICT — 4 задания
-
-person = {
-    "name": "Liza",
-    "age": 25,
-    "city": "Dnipro",
-    "profession": "QA"
+# Exists some car data with color, year, engine_volume, car type , price
+# We have search_criteria as tuple of ( year>= , engine_volume >= , price<=)
+# write code that will help us to get cars that satisfy search_criteria.
+# Cars should be sorted by price ascending.
+# We should print up to five (5) first found elements
+car_data = {
+  'Mercedes': ('silver', 2019, 1.8, 'sedan', 50000),
+  'Audi': ('black', 2020, 2.0, 'sedan', 55000),
+  'BMW': ('white', 2018, 3.0, 'suv', 70000),
+  'Lexus': ('gray', 2016, 2.5, 'coupe', 45000),
+  'Toyota': ('blue', 2021, 1.6, 'hatchback', 25000),
+  'Honda': ('red', 2017, 1.5, 'sedan', 30000),
+  'Ford': ('green', 2019, 2.3, 'suv', 40000),
+  'Chevrolet': ('purple', 2020, 1.4, 'hatchback', 22000),
+  'Nissan': ('pink', 2018, 1.8, 'sedan', 35000),
+  'Volkswagen': ('brown', 2021, 1.4, 'hatchback', 28000),
+  'Hyundai': ('gray', 2019, 1.6, 'suv', 32000),
+  'Kia': ('white', 2020, 2.0, 'sedan', 28000),
+  'Volvo': ('silver', 2017, 1.8, 'suv', 45000),
+  'Subaru': ('blue', 2018, 2.5, 'wagon', 35000),
+  'Mazda': ('red', 2019, 2.5, 'sedan', 32000),
+  'Porsche': ('black', 2017, 3.0, 'coupe', 80000),
+  'Jeep': ('green', 2021, 3.0, 'suv', 50000),
+  'Chrysler': ('gray', 2016, 2.4, 'sedan', 22000),
+  'Dodge': ('yellow', 2020, 3.6, 'suv', 40000),
+  'Ferrari': ('red', 2019, 4.0, 'coupe', 500000),
+  'Lamborghini': ('orange', 2021, 5.0, 'coupe', 800000),
+  'Maserati': ('blue', 2018, 4.7, 'coupe', 100000),
+  'Bugatti': ('black', 2020, 8.0, 'coupe', 2000000),
+  'McLaren': ('yellow', 2017, 4.0, 'coupe', 700000),
+  'Rolls-Royce': ('white', 2019, 6.8, 'sedan', 500000),
+  'Bentley': ('gray', 2020, 4.0, 'coupe', 300000),
+  'Jaguar': ('red', 2016, 2.0, 'suv', 40000),
+  'Land Rover': ('green', 2018, 3.0, 'suv', 60000),
+  'Tesla': ('silver', 2020, 0.0, 'sedan', 60000),
+  'Acura': ('white', 2017, 2.4, 'suv', 40000),
+  'Cadillac': ('black', 2019, 3.6, 'suv', 55000),
+  'Infiniti': ('gray', 2018, 2.0, 'sedan', 35000),
+  'Lincoln': ('white', 2021, 2.0, 'suv', 50000),
+  'GMC': ('blue', 2016, 1.5, 'pickup', 30000),
+  'Ram': ('black', 2019, 5.7, 'pickup', 40000),
+  'Chevy': ('red', 2017, 2.4, 'pickup', 35000),
+  'Dodge Ram': ('white', 2020, 3.6, 'pickup', 45000),
+  'Ford F-Series': ('gray', 2021, 3.5, 'pickup', 50000),
+  'Nissan Titan': ('silver', 2018, 5.6, 'pickup', 35000)
 }
+search_criteria = (2017, 1.6, 36000)
 
-person.update({'language': 'Python'})
-person['age']=26
-person.pop('city')
-print(person.items())
-print(person.get('name'))
-print(person.get('age'))
+def find_car_data(year,engine_volume,price):
+    new_car_list=[]
+    for car_criteria in list(car_data.items()):
+      if year>=car_criteria[1][1] and engine_volume >=car_criteria[1][2] and price<=car_criteria[1][4]:
+        new_car_list.append(car_criteria)
+        new_car_list.sort(key=lambda car: car[1][4])
+    print(new_car_list[:5])
 
-students = {
-    "Liza": 95,
-    "Masha": 70,
-    "Dasha": 88,
-    "Anna": 60,
-    "Kate": 100
-}
-passed_students = {}
-for mark in students.items():
-   if mark[1]>80:passed_students[mark[0]]=mark[1]
-print(passed_students)
-
-products = {
-    "laptop": {
-        "price": 1200,
-        "rating": 4.8,
-        "stock": 5
-    },
-    "phone": {
-        "price": 800,
-        "rating": 4.5,
-        "stock": 10
-    },
-    "tablet": {
-        "price": 500,
-        "rating": 4.9,
-        "stock": 0
-    },
-    "monitor": {
-        "price": 300,
-        "rating": 4.2,
-        "stock": 7
-    }
-}
-available_products = []
-for name, info in products.items():
-   #print(name, info['price'])
-   if info['stock']>0: available_products.append((name, info))
-   available_products.sort(key=lambda stock: stock[1]['price'])
-print(available_products)
+find_car_data(2018, 5.6, 35000)
+         
