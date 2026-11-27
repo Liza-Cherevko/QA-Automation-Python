@@ -2,6 +2,7 @@
 def multiplication_table(number):
   multiplier = 1
   while multiplier*number < 25: 
+   if number <=0: break
    result=multiplier*number
    print(str(number) + 'x'+ str(multiplier)+ '='+ str(result))
    multiplier += 1
@@ -73,11 +74,11 @@ def multiplication_table_01(number):
 print(multiplication_table_01(3))
 
 #8 
-def sum_calculation(n1,n2):
+def sum_calculation_01(n1,n2):
    #Calculates the sum of the input numbers.
    result = n1+n2
    return result
-print(sum_calculation(1,12))
+print(sum_calculation_01(1,12))
 
 #9
 def longest_word_01(test_word_list):
