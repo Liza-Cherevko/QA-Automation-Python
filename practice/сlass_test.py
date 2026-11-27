@@ -1,28 +1,21 @@
-class Student:
-    name = None
-    surname = None
-    age= None
-    grade= None
-    def set_data(self,name, surname,age,grade):
-        self.name=name
-        self.surname=surname
-        self.age=age
-        self.grade=grade
+class Cat:
+    name=None
+    age = None
+    isHappy=None
 
-    def new_grade(self,new_grade):
-        self.grade= new_grade
+    def __init__(self, name, age, isHappy):
+        self.set_data(name, age, isHappy)
+        self.get_data()
+
+
+    def set_data(self, name, age, isHappy):
+           self.name=name
+           self.age=age
+           self.isHappy=isHappy
+
     def get_data(self):
-        print( self.name,self.surname,self.age,self.grade)
-
-    
-                
-                
-                
+        print(self.name, self.age, self.isHappy)
 
 
-
-
-student1= Student()
-student1.set_data('Test', 'Case', 45, 50)
-student1.new_grade(100)
-student1.get_data()
+cat1=Cat('Baks', 10, True)
+cat2=Cat('Ostin', 2, True)
